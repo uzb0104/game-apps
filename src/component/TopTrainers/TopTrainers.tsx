@@ -16,25 +16,25 @@ const trainers = [
     name: "Boltaboy",
     specialty: "Bodybuildin murabbiy",
     image: coach1,
-    info: "Jon bodibilding bo'yicha 10 yillik tajribaga ega va mijozlarga fitnes maqsadlariga erishishda yordam beradi.",
+    info: "Boltaboy bodibilding bo'yicha 10 yillik tajribaga ega va mijozlarga fitnes maqsadlariga erishishda yordam beradi.",
   },
   {
     name: "Tesha oy",
     specialty: "Yoga Murabbiy",
     image: coach2,
-    info: "Emili Devis 5 yillik yoga o'rgatish tajribasiga ega, moslashuvchanlik va e'tiborga ixtisoslashgan.",
+    info: "Tesha oy 5 yillik yoga o'rgatish tajribasiga ega, moslashuvchanlik va e'tiborga ixtisoslashgan.",
   },
   {
     name: "Ketmonjon",
     specialty: "Cardio Murabbiy",
     image: coach3,
-    info: "Mayk kardio mashg'ulotlar bo'yicha mutaxassis va mijozlarga chidamliligini oshirishga yordam berdi.",
+    info: "Ketmonjon kardio mashg'ulotlar bo'yicha mutaxassis va mijozlarga chidamliligini oshirishga yordam berdi.",
   },
   {
     name: "Qavunjon",
     specialty: "Dietolog murabbiy",
     image: coach44,
-    info: "Jon Smit samaradorligi va farovonligini oshirish uchun shaxsiylashtirilgan ovqatlanish rejalarini taklif qiladi.",
+    info: "Qavunjon samaradorligi va farovonligini oshirish uchun shaxsiylashtirilgan ovqatlanish rejalarini taklif qiladi.",
   },
 ];
 
@@ -45,7 +45,7 @@ const TopTrainers = () => {
         variant="h4"
         textAlign="center"
         fontWeight="bold"
-        sx={{ color: "#100202" }}
+        sx={{ color: "#6a6565" }}
       >
         Eng Yaxshi Murabbiylar
       </Typography>

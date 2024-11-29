@@ -171,7 +171,7 @@ const AboutSport = () => {
       <Box sx={{ p: 4, backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
         <Typography
           variant="h4"
-          sx={{ mb: 4, textAlign: "center", color: "#333" }}
+          sx={{ mb: 4, textAlign: "center", color: "#596ed6" }}
         >
           Sport Turlari Haqida
         </Typography>
@@ -181,7 +181,7 @@ const AboutSport = () => {
               variant="body1"
               sx={{ mb: 4, textAlign: "center", color: "#555" }}
             >
-              {generalInfo}
+              {/* {generalInfo} */}
             </Typography>
             <Grid container spacing={3}>
               {Object.keys(sportsInfo).map((key) => {
@@ -232,14 +232,14 @@ const AboutSport = () => {
             <Typography variant="body1" sx={{ mb: 4, color: "#555" }}>
               {sportsInfo[selectedSport].description}
             </Typography>
-            <Button
+            {/* <Button
               variant="outlined"
               color="primary"
               sx={{ mt: 2 }}
               onClick={() => setSelectedSport(null)}
             >
               Ortga qaytish
-            </Button>
+            </Button> */}
           </Box>
         )}
       </Box>

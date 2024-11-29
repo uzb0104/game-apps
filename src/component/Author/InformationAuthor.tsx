@@ -3,6 +3,8 @@ import { Box, Typography, Avatar, Stack, IconButton } from "@mui/material";
 import { Star } from "@mui/icons-material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import myImg from "../img/AuthorImages.jpg";
+import FriendImg from "../img/photo_2024-09-30_22-15-18.jpg";
+import Friend1 from "../img/photo_2024-11-27_14-39-49.jpg";
 
 const authorData = [
   {
@@ -13,16 +15,16 @@ const authorData = [
       "Sport – bu insonning jismoniy va aqliy qobiliyatlarini rivojlantirish va sinovdan o'tkazish uchun mo'ljallangan faoliyat turi.",
   },
   {
-    name: "Abbosbek Omonov",
-    profession: "Fitness Trainer",
-    avatar: myImg,
+    name: "Firdavs Rustamov",
+    profession: "Software Developer",
+    avatar: FriendImg,
     review:
       "Sport bizga irodani mustahkamlash, mashaqqatlarga bardosh berishni o'rgatadi va salomatlikni yaxshilash uchun ajoyib vosita.",
   },
   {
-    name: "Abbosbek Omonov",
-    profession: "Athlete",
-    avatar: myImg,
+    name: "Qahramon Qodirov",
+    profession: "Backend Developer",
+    avatar: Friend1,
     review:
       "Sport inson hayotiga jismoniy, aqliy va hissiy jihatdan ijobiy ta'sir ko'rsatadi.",
   },

@@ -155,6 +155,8 @@ const NavBar = () => {
             sx={{ mr: 4, justifyContent: "flex-end", alignItems: "center" }}
           >
             <Button
+              component={Link}
+              to="/logreg"
               variant="outlined"
               sx={{
                 textTransform: "none",
@@ -166,7 +168,7 @@ const NavBar = () => {
                 "&:hover": { color: "white" },
               }}
             >
-              Login
+              Ro'yxatdan o'tish
             </Button>
 
             <Box
@@ -176,7 +178,7 @@ const NavBar = () => {
                 width: "auto",
               }}
             >
-              <Button
+              {/* <Button
                 component={Link}
                 to="/signup"
                 variant="contained"
@@ -191,7 +193,7 @@ const NavBar = () => {
                 }}
               >
                 Sign Up
-              </Button>
+              </Button> */}
             </Box>
           </Stack>
         </>

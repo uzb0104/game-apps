@@ -31,7 +31,7 @@ const Fitness = () => {
   ) => setFitnessLevel(event.target.value);
 
   const generatePlan = () => {
-    const recommendation = `Har kuni ${timeAvailable} daqiqa davomida '${goal}' maqsadingizga erishish uchun ${fitnessLevel} darajadagi mashqlarni bajaring. 
+    const recommendation = `Har kuni ${timeAvailable} daqiqa davomida '${goal}' maqsadingizga erishish uchun ${fitnessLevel} darajadagi mashqlarni bajaring.
       Mashg‘ulotlarni muntazam bajaring va o‘z maqsadingizga erishishda bardavom bo‘ling!`;
 
     const motivation = goal.includes("vazn")
@@ -72,7 +72,7 @@ const Fitness = () => {
           flexDirection: "column",
         }}
       >
-        <Typography variant="h4" sx={{ mb: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, color: "#4b4eda" }}>
           Fitness Rejangizni Yaratish
         </Typography>
 

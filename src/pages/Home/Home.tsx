@@ -21,6 +21,7 @@ import gymbg from "../../component/img/spacious-gym-with-modern-workout-equipmen
 import NavBar from "../../component/Navbar/Navbar";
 import TopTrainers from "../../component/TopTrainers/TopTrainers";
 import InformationAuthor from "../../component/Author/InformationAuthor";
+import GymsImages from "../../component/Gymimages/GymsImages";
 import Footer from "../../component/Footer/Footer";
 
 type Props = {};
@@ -218,7 +219,8 @@ const Home = (props: Props) => {
       </Grid>
 
       <TopTrainers />
-      <InformationAuthor />
+      {/* <InformationAuthor /> */}
+      <GymsImages />
 
       <Footer />
     </>

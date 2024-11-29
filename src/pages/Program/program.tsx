@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ShareIcon from "@mui/icons-material/Share";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -39,7 +40,8 @@ const ProgramPage = () => {
     },
     {
       title: "Kuchli mashqlar",
-      description: "Mushaklarni kuchaytirish va shakllantirish.",
+      description:
+        "Mushaklarni kuchaytirish va shakllantirish tana holatini yaxshilash  kayfiyatni yaxshilash.",
       difficulty: "O'rta",
       duration: "45 daqiqa",
       videoUrl: "https://www.youtube.com/embed/StB5igY9viA",
@@ -384,7 +386,7 @@ const ProgramPage = () => {
                 </CardContent>
                 <CardActions>
                   <IconButton color="primary" onClick={() => handleLike(index)}>
-                    <FavoriteIcon sx={{ color: "red" }} />
+                    <ThumbUpIcon sx={{ color: "blue" }} />
                   </IconButton>
                   <Typography variant="caption">
                     {likes[index]} Likes

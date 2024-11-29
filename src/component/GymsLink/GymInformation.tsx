@@ -19,12 +19,13 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import GymImg from "../img/GymsImage6.jpg";
 import NavBar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import InformationAuthor from "../Author/InformationAuthor";
 
 const GymDetails = () => {
   const gymInfo = {
     name: "Premier Zal",
     description:
-      "Power Gym – barcha yoshdagilar uchun zamonaviy sport zali. Bu yerda siz jismoniy shaklingizni yaxshilash, sog'lom turmush tarzini rivojlantirish imkoniyatiga ega bo‘lasiz.",
+      "Premier Zal – barcha yoshdagilar uchun zamonaviy sport zali. Bu yerda siz jismoniy shaklingizni yaxshilash, sog'lom turmush tarzini rivojlantirish imkoniyatiga ega bo‘lasiz.",
     features: [
       "Zamonaviy trenajyorlar",
       "Yuqori malakali murabbiylar",
@@ -46,7 +47,7 @@ const GymDetails = () => {
       <Box sx={{ p: 4 }}>
         <Typography
           variant="h3"
-          sx={{ mb: 4, fontWeight: "bold", color: "GrayText" }}
+          sx={{ mb: 4, fontWeight: "bold", color: "#6176d7" }}
         >
           {gymInfo.name}
         </Typography>
@@ -69,7 +70,10 @@ const GymDetails = () => {
                 {gymInfo.description}
               </Typography>
 
-              <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+              <Typography
+                variant="h5"
+                sx={{ fontWeight: "bold", mb: 2, color: "#6176d7" }}
+              >
                 Xususiyatlar
               </Typography>
               <List>
@@ -118,6 +122,7 @@ const GymDetails = () => {
           </Grid>
         </Grid>
       </Box>
+      <InformationAuthor />
       <Footer />
     </Stack>
   );

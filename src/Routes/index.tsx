@@ -7,6 +7,8 @@ import GymInformation from "../component/GymsLink/GymInformation";
 import AboutSport from "../pages/AboutSport/AboutSport";
 import Fitnes from "../pages/FitnesLink/Fitnes";
 import SignUp from "../component/Navbar/SignUp";
+import LogReg from "../component/Navbar/LogReg";
+import Login from "../component/Navbar/Login";
 
 type RouteType = {
   path: string;
@@ -38,5 +40,13 @@ export const ROUTES: readonly RouteType[] = [
   {
     path: PATH.SIGN_UP,
     element: <SignUp />,
+  },
+  {
+    path: PATH.LOGIN,
+    element: <Login />,
+  },
+  {
+    path: PATH.LOG_REG,
+    element: <LogReg />,
   },
 ];

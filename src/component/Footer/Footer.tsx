@@ -40,8 +40,9 @@ const Footer = () => {
       sx={{
         backgroundColor: "#1e1e1e",
         color: "white",
-        py: 4,
+        py: 6,
         px: 2,
+        height: 200,
         overflow: "hidden",
       }}
     >
