@@ -45,7 +45,7 @@ const TopTrainers = () => {
         variant="h4"
         textAlign="center"
         fontWeight="bold"
-        sx={{ color: "#6a6565" }}
+        sx={{ color: "#3d76e7" }}
       >
         Eng Yaxshi Murabbiylar
       </Typography>

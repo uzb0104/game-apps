@@ -7,7 +7,7 @@ import {
   TableBody,
   Button,
 } from "@mui/material";
-import { Member } from "../../types/Member";
+import { Member } from "../../types/types/Member";
 
 interface MemberTableProps {
   members: Member[];

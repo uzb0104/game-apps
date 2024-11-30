@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ServiceForm from "../Admin/ServiceForm";
-import { Service } from "../../types/Services";
+import { Service } from "../../types/types/Services";
 
 const Services: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);

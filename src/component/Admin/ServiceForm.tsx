@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
-import { Service } from "../../types/Services";
+import { Service } from "../../types/types/Services";
 
 interface ServiceFormProps {
   onAdd: (service: Service) => void;
 }
 
 const ServiceForm: React.FC<ServiceFormProps> = ({ onAdd }) => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState<string>("");
   const [price, setPrice] = useState<number | "">("");
 
   const handleSubmit = () => {
-    if (name && price) {
-      onAdd({ id: Date.now(), name, price: Number(price) });
+    if (name.trim() && price !== "") {
+      onAdd({ id: Date.now(), name: name.trim(), price: Number(price) });
       setName("");
       setPrice("");
     }
@@ -26,22 +26,31 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ onAdd }) => {
         gap: "20px",
         width: "400px",
       }}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit();
+      }}
     >
       <TextField
-        label="Service Name"
+        label="Jihoz nomi"
         variant="outlined"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        required
       />
-      {/* <TextField
-        label="Price"
+      <TextField
+        label="Narxi"
         variant="outlined"
         type="number"
         value={price}
-        onChange={(e) => setPrice(e.target.value)}
-      /> */}
-      <Button variant="contained" color="primary" onClick={handleSubmit}>
-        Add Service
+        onChange={(e) =>
+          setPrice(e.target.value === "" ? "" : Number(e.target.value))
+        }
+        required
+        inputProps={{ min: 0 }}
+      />
+      <Button type="submit" variant="contained" color="primary">
+        Qo'shish
       </Button>
     </form>
   );

@@ -140,7 +140,7 @@ const Home = (props: Props) => {
           textAlign: "center",
           fontWeight: "bold",
           mt: 4,
-          color: "#130606",
+          color: "#3d76e7",
         }}
       >
         Sport Zallar
