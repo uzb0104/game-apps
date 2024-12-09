@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import NavBar from "./Navbar";
-import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +10,8 @@ const SignUp = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -19,6 +20,8 @@ const SignUp = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("User Data (SignUp):", formData);
+
+    navigate("/adminnavbar");
   };
 
   return (
@@ -30,7 +33,6 @@ const SignUp = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-
           overflow: "hidden",
           bgcolor: "#f5f5f5",
         }}

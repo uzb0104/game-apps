@@ -62,6 +62,7 @@ const Fitness = () => {
   return (
     <Stack bgcolor={"#290f0fe9"}>
       <NavBar />
+
       <Box
         sx={{
           p: 3,

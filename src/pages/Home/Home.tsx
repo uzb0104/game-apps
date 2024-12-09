@@ -20,7 +20,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import gymbg from "../../component/img/spacious-gym-with-modern-workout-equipment-large-windows-showcasing-expansive-cityscape-panoramic-view-gym-situated-heart-city-ai-generated_585735-19484.avif";
 import NavBar from "../../component/Navbar/Navbar";
 import TopTrainers from "../../component/TopTrainers/TopTrainers";
-import InformationAuthor from "../../component/Author/InformationAuthor";
+
 import GymsImages from "../../component/Gymimages/GymsImages";
 import Footer from "../../component/Footer/Footer";
 
@@ -35,38 +35,38 @@ const Home = (props: Props) => {
     },
     {
       src: GymImg2,
-      title: "Premier Zal",
+      title: "Power Zal",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
     {
       src: "https://robbreport.com/wp-content/uploads/2022/07/Himat_WeightRoom.jpg?w=1000",
-      title: "Premier Zal",
+      title: "Bo'sim Zal",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
 
     {
       src: GymImg4,
-      title: "Premier Zal",
+      title: " Trejanor Zal",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
     {
       src: GymImg5,
-      title: "Premier Zal",
+      title: "Fitbox Arena",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
     {
       src: GymImg6,
-      title: "Premier Zal",
+      title: "Champion Zal",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
     {
       src: GymImg7,
-      title: "Premier Zal",
+      title: "Muscle Zal",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
     {
       src: GymImg3,
-      title: "Premier Zal",
+      title: "Hammer Zal",
       desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
     },
   ];

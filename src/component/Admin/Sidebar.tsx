@@ -13,7 +13,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import BuildIcon from "@mui/icons-material/Build";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PaymentIcon from "@mui/icons-material/Payment";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface SidebarProps {
   name: string;
@@ -43,57 +43,90 @@ const Sidebar: React.FC<SidebarProps> = ({ name, profilePic }) => {
       </div>
 
       <List>
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-          <ListItemButton>
-            <ListItemIcon>
-              <DashboardIcon style={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Menu" />
-          </ListItemButton>
-        </Link>
-        <Link to="/members" style={{ textDecoration: "none", color: "white" }}>
-          <ListItemButton>
-            <ListItemIcon>
-              <GroupIcon style={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Members" />
-          </ListItemButton>
-        </Link>
-        <Link to="/services" style={{ textDecoration: "none", color: "white" }}>
-          <ListItemButton>
-            <ListItemIcon>
-              <BuildIcon style={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Services" />
-          </ListItemButton>
-        </Link>
-        <Link to="/payment" style={{ textDecoration: "none", color: "white" }}>
-          <ListItemButton>
-            <ListItemIcon>
-              <PaymentIcon style={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Payments" />
-          </ListItemButton>
-        </Link>
-        <Link to="/userlist" style={{ textDecoration: "none", color: "white" }}>
-          <ListItemButton>
-            <ListItemIcon>
-              <AccountCircleIcon style={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="UserList" />
-          </ListItemButton>
-        </Link>
-        <Link
-          to="/adminprofile"
-          style={{ textDecoration: "none", color: "white" }}
+        <NavLink
+          to="/adminnavbar"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#ff6f61" : "white",
+          })}
         >
           <ListItemButton>
             <ListItemIcon>
-              <AccountCircleIcon style={{ color: "white" }} />
+              <DashboardIcon style={{ color: "inherit" }} />
+            </ListItemIcon>
+            <ListItemText primary="Menu" />
+          </ListItemButton>
+        </NavLink>
+        <NavLink
+          to="/members"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#ff6f61" : "white",
+          })}
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <GroupIcon style={{ color: "inherit" }} />
+            </ListItemIcon>
+            <ListItemText primary="Members" />
+          </ListItemButton>
+        </NavLink>
+        <NavLink
+          to="/services"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#ff6f61" : "white",
+          })}
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <BuildIcon style={{ color: "inherit" }} />
+            </ListItemIcon>
+            <ListItemText primary="Services" />
+          </ListItemButton>
+        </NavLink>
+        <NavLink
+          to="/payment"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#ff6f61" : "white",
+          })}
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <PaymentIcon style={{ color: "inherit" }} />
+            </ListItemIcon>
+            <ListItemText primary="Payments" />
+          </ListItemButton>
+        </NavLink>
+        <NavLink
+          to="/userlist"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#ff6f61" : "white",
+          })}
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <AccountCircleIcon style={{ color: "inherit" }} />
+            </ListItemIcon>
+            <ListItemText primary="UserList" />
+          </ListItemButton>
+        </NavLink>
+        <NavLink
+          to="/adminprofile"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#ff6f61" : "white",
+          })}
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <AccountCircleIcon style={{ color: "inherit" }} />
             </ListItemIcon>
             <ListItemText primary="Profile" />
           </ListItemButton>
-        </Link>
+        </NavLink>
       </List>
     </div>
   );

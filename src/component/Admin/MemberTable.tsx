@@ -7,8 +7,9 @@ import {
   TableBody,
   IconButton,
   Button,
+  Tooltip,
 } from "@mui/material";
-import { Member } from "../../types/types/Member";
+import { Member } from "../../types/Member";
 import InfoIcon from "@mui/icons-material/Info";
 import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 import ToggleOffIcon from "@mui/icons-material/ToggleOff";
@@ -48,41 +49,51 @@ const MemberTable: React.FC<MemberTableProps> = ({
             <TableCell>{member.contact}</TableCell>
             <TableCell>{member.age}</TableCell>
             <TableCell>{member.address}</TableCell>
-            <TableCell>{member.registrationDate}</TableCell>
+            <TableCell>
+              {new Date(member.registrationDate).toLocaleDateString()}
+            </TableCell>
             <TableCell>{member.status}</TableCell>
             <TableCell>
-              <IconButton
-                color="primary"
-                onClick={() => onViewProfile(member.id)}
-              >
-                <InfoIcon />
-              </IconButton>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => onEdit(member.id)}
-                style={{ marginRight: "10px" }}
-              >
-                Edit
-              </Button>
-              <IconButton
-                color="secondary"
-                onClick={() => onToggleStatus(member.id)}
-              >
-                {member.status === "Active" ? (
-                  <ToggleOffIcon />
-                ) : (
-                  <ToggleOnIcon />
-                )}
-              </IconButton>
-              <Button
-                variant="contained"
-                color="secondary"
-                style={{ marginLeft: "10px" }}
-                onClick={() => onDelete(member.id)}
-              >
-                Delete
-              </Button>
+              <Tooltip title="View Profile">
+                <IconButton
+                  color="primary"
+                  onClick={() => onViewProfile(member.id)}
+                >
+                  <InfoIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Edit Member">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => onEdit(member.id)}
+                  style={{ marginRight: "10px" }}
+                >
+                  Edit
+                </Button>
+              </Tooltip>
+              <Tooltip title="Toggle Status">
+                <IconButton
+                  color="secondary"
+                  onClick={() => onToggleStatus(member.id)}
+                >
+                  {member.status === "Faol" ? (
+                    <ToggleOffIcon />
+                  ) : (
+                    <ToggleOnIcon />
+                  )}
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Delete Member">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ marginLeft: "10px" }}
+                  onClick={() => onDelete(member.id)}
+                >
+                  Delete
+                </Button>
+              </Tooltip>
             </TableCell>
           </TableRow>
         ))}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
-import { Service } from "../../types/types/Services";
+import { Service } from "../../types/Services";
 
 interface ServiceFormProps {
   onAdd: (service: Service) => void;

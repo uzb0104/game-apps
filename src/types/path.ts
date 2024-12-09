@@ -1,4 +1,5 @@
 
+
 export const PATH ={
     HOME:'/',
     PROGRAM:'/program',
@@ -8,5 +9,7 @@ export const PATH ={
     SIGN_UP:"/signup",
     LOGIN:"/login",
     LOG_REG: "/logreg",
-
+    SIDEBAR: "/sidebar",
+    ADMINNAVBAR: "/adminnavbar",
+    SPORTDETAIL: "/sportdetail",
 }

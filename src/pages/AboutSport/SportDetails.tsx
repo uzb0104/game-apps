@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
-import Gym from "../../component/img/GymsImage6.jpg";
 
 interface SportDetailsProps {
   title: string;
@@ -25,7 +24,7 @@ const SportDetails: React.FC<SportDetailsProps> = ({
       {imageUrl && (
         <Box
           component="img"
-          src={Gym}
+          src={imageUrl}
           alt={title}
           sx={{ maxWidth: "100%", borderRadius: 2, boxShadow: 3 }}
         />
@@ -40,16 +39,16 @@ const SportDetails: React.FC<SportDetailsProps> = ({
             controls
             style={{ maxWidth: "100%", borderRadius: 8 }}
           />
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={onBack}
+            sx={{ alignSelf: "center" }}
+          >
+            Ortga qaytish
+          </Button>
         </Box>
       )}
-      <Button
-        variant="outlined"
-        color="primary"
-        onClick={onBack}
-        sx={{ alignSelf: "center" }}
-      >
-        Ortga qaytish
-      </Button>
     </Stack>
   );
 };

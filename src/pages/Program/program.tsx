@@ -15,11 +15,10 @@ import {
   CardMedia,
   Snackbar,
 } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ShareIcon from "@mui/icons-material/Share";
-import CloseIcon from "@mui/icons-material/Close";
 
 const ProgramPage = () => {
   const [rating, setRating] = useState<number | null>(0);

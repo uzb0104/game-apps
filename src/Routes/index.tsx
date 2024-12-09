@@ -9,6 +9,8 @@ import Fitnes from "../pages/FitnesLink/Fitnes";
 import SignUp from "../component/Navbar/SignUp";
 import LogReg from "../component/Navbar/LogReg";
 import Login from "../component/Navbar/Login";
+import AdminNavbar from "../component/Admin/AdminNavbar";
+import SportDetail from "../pages/AboutSport/SportDetail";
 
 type RouteType = {
   path: string;
@@ -48,5 +50,13 @@ export const ROUTES: readonly RouteType[] = [
   {
     path: PATH.LOG_REG,
     element: <LogReg />,
+  },
+  {
+    path: PATH.ADMINNAVBAR,
+    element: <AdminNavbar />,
+  },
+  {
+    path: PATH.SPORTDETAIL + "/:sportId",
+    element: <SportDetail />,
   },
 ];
