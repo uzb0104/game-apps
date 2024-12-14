@@ -40,7 +40,7 @@ const Footer = () => {
   const usefulLinks = [
     { name: "Asosiy", path: "/" },
     { name: "Program", path: "/Program" },
-    { name: "Sport haqida", path: "/Sporthaqida" },
+    { name: "Sport turlari", path: "/AboutSport" },
     { name: "Fitnes", path: "/Fitnes" },
   ];
 
@@ -51,6 +51,7 @@ const Footer = () => {
         color: "white",
         py: 6,
         px: 2,
+        mt: -7,
         overflow: "hidden",
       }}
     >

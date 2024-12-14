@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { PATH } from "../../types/path";
+import React, { useState, useEffect } from "react";
 import {
+  Container,
   Grid,
   IconButton,
   ImageListItemBar,
@@ -9,67 +10,74 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import GymImg from "../../component/img/gymsImage1.jpg";
-import GymImg2 from "../../component/img/gymiImages2.jpg";
-import GymImg3 from "../../component/img/GymsImage3.jpg";
-import GymImg4 from "../../component/img/GymsImage4.jpg";
-import GymImg5 from "../../component/img/GymsImages5.jpg";
-import GymImg6 from "../../component/img/GymsImage6.jpg";
-import GymImg7 from "../../component/img/GymsImage7.jpeg";
 import SearchIcon from "@mui/icons-material/Search";
-import gymbg from "../../component/img/spacious-gym-with-modern-workout-equipment-large-windows-showcasing-expansive-cityscape-panoramic-view-gym-situated-heart-city-ai-generated_585735-19484.avif";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import NavBar from "../../component/Navbar/Navbar";
 import TopTrainers from "../../component/TopTrainers/TopTrainers";
-
-import GymsImages from "../../component/Gymimages/GymsImages";
 import Footer from "../../component/Footer/Footer";
+import gymbg from "../../component/img/spacious-gym-with-modern-workout-equipment-large-windows-showcasing-expansive-cityscape-panoramic-view-gym-situated-heart-city-ai-generated_585735-19484.avif";
+import { supabase } from "utils/supabase";
+import { PATH } from "types/path";
+import Subscriber from "component/Subscriber/Subscriber";
 
-type Props = {};
+interface homeGymImg {
+  title: string;
+  name: string;
+  img: string;
+}
 
-const Home = (props: Props) => {
-  const items = [
-    {
-      src: GymImg,
-      title: "Premier Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-    {
-      src: GymImg2,
-      title: "Power Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-    {
-      src: "https://robbreport.com/wp-content/uploads/2022/07/Himat_WeightRoom.jpg?w=1000",
-      title: "Bo'sim Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
+const Home = () => {
+  const [getDataHome, setDataHome] = useState<homeGymImg[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
 
-    {
-      src: GymImg4,
-      title: " Trejanor Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-    {
-      src: GymImg5,
-      title: "Fitbox Arena",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-    {
-      src: GymImg6,
-      title: "Champion Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-    {
-      src: GymImg7,
-      title: "Muscle Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-    {
-      src: GymImg3,
-      title: "Hammer Zal",
-      desc: "Narsalaringizni saqlash uchun toza, xavfsiz va sanitariya muhiti.",
-    },
-  ];
+  const fetchData = async () => {
+    const { data, error } = await supabase.from("Home").select("*");
+
+    if (error) {
+      console.error("Error fetching data:", error);
+      return null;
+    }
+
+    setDataHome(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value.toLowerCase());
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? getDataHome.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === getDataHome.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const calculateVisibleItems = () => {
+    const visibleItems = getDataHome.slice(currentIndex, currentIndex + 4);
+    if (visibleItems.length < 4) {
+      return visibleItems.concat(getDataHome.slice(0, 4 - visibleItems.length));
+    }
+    return visibleItems;
+  };
+
+  const visiblegetDataHome = calculateVisibleItems();
+
+  const filtereDataHome = getDataHome.filter(
+    (gym) =>
+      gym.title.toLowerCase().includes(searchQuery) ||
+      gym.name.toLowerCase().includes(searchQuery)
+  );
 
   return (
     <>
@@ -124,8 +132,10 @@ const Home = (props: Props) => {
           >
             <InputBase
               sx={{ ml: 1, flex: 1 }}
-              placeholder="Search Gyms"
-              inputProps={{ "aria-label": "search gyms" }}
+              placeholder="Zallarni qidirish"
+              inputProps={{ "aria-label": "Zallarni qidirish" }}
+              onChange={handleSearchChange}
+              value={searchQuery}
             />
             <IconButton type="button" aria-label="search">
               <SearchIcon />
@@ -134,94 +144,78 @@ const Home = (props: Props) => {
         </Stack>
       </Stack>
 
-      <Typography
-        variant="h4"
-        sx={{
-          textAlign: "center",
-          fontWeight: "bold",
-          mt: 4,
-          color: "#3d76e7",
-        }}
-      >
-        Sport Zallar
-      </Typography>
-      <Grid
-        container
-        spacing={2}
-        mt={3}
-        justifyContent="center"
-        alignItems="center"
-      >
-        {items.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Stack
-              position="relative"
-              alignItems="center"
-              sx={{
-                "&:hover img": {
-                  transform: "scale(1.05)",
-                  transition: "transform 0.3s ease-in-out",
-                },
-              }}
-            >
-              <Link to={PATH.GYM_INFORMATION + "/" + item.title}>
-                <img
-                  style={{
-                    width: "100%",
-                    maxWidth: "400px",
-                    height: "250px",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                  src={item.src}
-                  alt={item.title}
-                />
-              </Link>
-              <ImageListItemBar
-                sx={{
-                  width: "100%",
-                  background: "rgba(0, 0, 0, 0.7)",
-                  color: "white",
-                  borderBottomLeftRadius: "8px",
-                  borderBottomRightRadius: "8px",
-                }}
-                title={
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontSize: { xs: "16px", md: "18px" },
-                      textOverflow: "ellipsis",
-                      overflow: "hidden",
-                      whiteSpace: "nowrap",
-                    }}
+      <Container>
+        <Typography
+          variant="h4"
+          sx={{
+            textAlign: "center",
+            fontWeight: "bold",
+            mt: 4,
+            color: "GrayText",
+            textShadow: "1px 1px",
+          }}
+        >
+          Sport Zallar
+        </Typography>
+        <Stack direction="row" alignItems="center" spacing={2} mt={4}>
+          <IconButton onClick={handlePrev} aria-label="Previous">
+            <ArrowBackIosNewIcon />
+          </IconButton>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+          >
+            {visiblegetDataHome.map((item) => (
+              <Grid item xs={12} sm={6} md={3} key={item.title}>
+                <Stack position="relative" alignItems="center">
+                  <Link
+                    to={`${PATH.GYM_INFORMATION}/${item.title}`}
+                    aria-label={item.title}
                   >
-                    {item.title}
-                  </Typography>
-                }
-                subtitle={
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontSize: { xs: "12px", md: "14px" },
-                      textOverflow: "ellipsis",
-                      overflow: "hidden",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {item.desc}
-                  </Typography>
-                }
-                position="bottom"
-              />
-            </Stack>
+                    <img
+                      style={{
+                        width: "100%",
+                        height: "300px",
+                        objectFit: "cover",
+                        borderRadius: "15px",
+                        transition: "transform 0.3s ease",
+                      }}
+                      src={item.img}
+                      alt={item.title}
+                    />
+                    <ImageListItemBar
+                      sx={{
+                        mb: 0.5,
+                        width: "100%",
+                        height: 20,
+                        position: "absolute",
+                        pb: 3,
+                        background: "rgba(0, 0, 0, 0.31)",
+                        color: "white",
+                        borderRadius: 3,
+                      }}
+                      title={
+                        <Typography variant="h5" textAlign={"center"} pt={3}>
+                          {item.title}
+                        </Typography>
+                      }
+                    />
+                  </Link>
+                </Stack>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-
-      <TopTrainers />
-      {/* <InformationAuthor /> */}
-      <GymsImages />
-
+          <IconButton onClick={handleNext} aria-label="Next">
+            <ArrowForwardIosIcon />
+          </IconButton>
+        </Stack>
+      </Container>
+      <Stack mb={12}>
+        <TopTrainers />
+        <Subscriber/>
+      </Stack>
       <Footer />
     </>
   );

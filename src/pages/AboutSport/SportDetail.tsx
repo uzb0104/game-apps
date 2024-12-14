@@ -187,7 +187,7 @@ const SportDetail = () => {
                 {sport.titleSport}
               </Typography>
             </Box>
-            <Grid container spacing={1} sx={{ mt: 4 }} justifyContent="center">
+            <Grid container spacing={2} sx={{ mt: 4 }} justifyContent="center">
               {gym.map((item: any, index) => (
                 <Grid item xs={12} sm={6} md={3} key={index}>
                   <Box sx={{ textAlign: "center" }}>

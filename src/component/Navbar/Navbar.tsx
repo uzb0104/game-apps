@@ -16,7 +16,7 @@ import {
 import SportsMartialArtsIcon from "@mui/icons-material/SportsMartialArts";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavBarLink } from "./Navbar.style";
-import SignUp from "./SignUp";
+// import SignUp from "./SignUp";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const NavBar = () => {
@@ -37,8 +37,8 @@ const NavBar = () => {
 
   const navLinks = [
     { to: "/", text: "Asosiy" },
-    { to: "/Program", text: "Program" },
-    { to: "/AboutSport", text: "Sport haqida" },
+    { to: "/HomeHome", text: "Program" },
+    { to: "/AboutSport", text: "Sport turlari" },
     { to: "/Fitnes", text: "Fitnes" },
   ];
 
@@ -79,7 +79,7 @@ const NavBar = () => {
                   bgcolor: "#1f1f1f",
                   color: "white",
                   height: "100%",
-                  overflow: "hidden", // Scroll cheklash uchun
+                  overflow: "hidden",
                   p: 2,
                 }}
                 role="presentation"
@@ -173,14 +173,14 @@ const NavBar = () => {
                 Ro'yxatdan o'tish
               </Button>
 
-              <Box
+              {/* <Box
                 sx={{
                   display: "flex",
                   justifyContent: "flex-end",
                   width: "auto",
                 }}
               >
-                {/* <Button
+                <Button
                 component={Link}
                 to="/signup"
                 variant="contained"
@@ -195,8 +195,8 @@ const NavBar = () => {
                 }}
               >
                 Sign Up
-              </Button> */}
-              </Box>
+              </Button>
+              </Box> */}
             </Stack>
           </>
         )}

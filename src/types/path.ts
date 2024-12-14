@@ -2,7 +2,7 @@
 
 export const PATH ={
     HOME:'/',
-    PROGRAM:'/program',
+   
     ABOUT_SPORT :'/aboutSport' ,
     FITNES:'/fitnes',
     GYM_INFORMATION:"/gymInformation",
@@ -12,4 +12,6 @@ export const PATH ={
     SIDEBAR: "/sidebar",
     ADMINNAVBAR: "/adminnavbar",
     SPORTDETAIL: "/sportdetail",
+    EXERCISEDETAIL: "/exercisedetail",
+    HOMEHOME: "/homehome",
 }

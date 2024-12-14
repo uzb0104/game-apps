@@ -34,7 +34,7 @@ const Login = () => {
         }}
       >
         <Typography variant="h4" mb={2} color={"info"}>
-          Kirish
+          Login
         </Typography>
         <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: 400 }}>
           <TextField
@@ -60,7 +60,7 @@ const Login = () => {
             color="primary"
             sx={{ mt: 2, width: "100%" }}
           >
-            Kirish
+            Login
           </Button>
         </form>
       </Box>

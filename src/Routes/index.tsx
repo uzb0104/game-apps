@@ -1,7 +1,5 @@
 import React from "react";
 import Asosiy from "../pages/Home/Home";
-import Program from "../pages/Program/program";
-
 import { PATH } from "../types/path";
 import GymInformation from "../component/GymsLink/GymInformation";
 import AboutSport from "../pages/AboutSport/AboutSport";
@@ -11,6 +9,8 @@ import LogReg from "../component/Navbar/LogReg";
 import Login from "../component/Navbar/Login";
 import AdminNavbar from "../component/Admin/AdminNavbar";
 import SportDetail from "../pages/AboutSport/SportDetail";
+import ExerciseDetail from "../pages/Program/pages/ExerciseDetail";
+import HomeHome from "pages/Program/pages/HomeHome";
 
 type RouteType = {
   path: string;
@@ -23,8 +23,12 @@ export const ROUTES: readonly RouteType[] = [
     element: <Asosiy />,
   },
   {
-    path: PATH.PROGRAM,
-    element: <Program />,
+    path: PATH.EXERCISEDETAIL + "/:id",
+    element: <ExerciseDetail />,
+  },
+  {
+    path: PATH.HOMEHOME,
+    element: <HomeHome />,
   },
   {
     path: PATH.ABOUT_SPORT,
